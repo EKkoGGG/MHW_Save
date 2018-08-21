@@ -11,11 +11,13 @@ using System.Net;
 using System.Runtime.InteropServices;
 using System.IO;
 using System.Threading;
+using System.Diagnostics;
 
 namespace WHW_Save
 {
     public partial class Form1 : DevExpress.XtraEditors.XtraForm
     {
+        private Process[] MyProcesses;
         static SmtpClient smt;
         public bool flag = true;
         public string path = Environment.CurrentDirectory + @"\Config.ini";
@@ -73,6 +75,12 @@ namespace WHW_Save
 
         private void simpleButton3_Click(object sender, EventArgs e)
         {
+            SaveMhw();
+
+        }
+
+        public void SaveMhw()
+        {
             try
             {
                 if (textEdit1.Text != "" && textEdit2.Text != "")
@@ -95,17 +103,17 @@ namespace WHW_Save
             {
                 MessageBox.Show("上传失败，请检查路径或邮箱是否填写正确");
             }
-
         }
 
         private void simpleButton4_Click(object sender, EventArgs e)
         {
             
             IniFile ini = new IniFile(path);
-            if (textEdit1.Text != "" && textEdit2.Text != "")
+            if (textEdit1.Text != "" && textEdit2.Text != "" && textEdit3.Text != "")
             {
                 ini.IniWriteValue("ini", "path", textEdit1.Text);
                 ini.IniWriteValue("ini", "eMail", textEdit2.Text);
+                ini.IniWriteValue("ini", "gamePath", textEdit3.Text);
                 MessageBox.Show("保存配置成功");
                 FileInfo info = new FileInfo(path);
                 if (info.Exists)
@@ -127,12 +135,72 @@ namespace WHW_Save
             {
                 textEdit1.Text = ini.IniReadValue("ini", "path");
                 textEdit2.Text = ini.IniReadValue("ini", "eMail");
+                textEdit3.Text = ini.IniReadValue("ini", "gamePath");
             }
             else
             {
                 MessageBox.Show("未找到配置文件，请开始配置");
             }
            
+        }
+
+        private void simpleButton5_Click(object sender, EventArgs e)
+        {
+            if (DialogResult.OK == openFileDialog2.ShowDialog())
+            {
+                textEdit3.Text = openFileDialog2.FileName;
+
+            }
+        }
+
+        private void notifyIcon1_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (WindowState == FormWindowState.Minimized && MouseButtons.Left == e.Button)
+            {
+                WindowState = FormWindowState.Normal;
+                this.Activate();
+            }
+        }
+
+        private void Form1_SizeChanged(object sender, EventArgs e)
+        {
+            this.ShowInTaskbar = false;
+        }
+
+        private void simpleButton6_Click(object sender, EventArgs e)
+        {
+            Process.Start(textEdit3.Text);
+            WindowState = FormWindowState.Minimized;
+            timer1.Enabled = true;
+            timer1.Start();
+        }
+
+        private void 显示ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Normal;
+        }
+
+        private void 退出ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            MyProcesses = Process.GetProcesses();
+            List<string> processName = new List<string>();
+            foreach (var item in MyProcesses)
+            {
+                processName.Add(item.ProcessName);
+            }
+            bool mhw = processName.Contains("");
+            if (!mhw)
+            {
+                timer1.Enabled = false;                
+                SaveMhw();
+                this.Close();
+
+            }
         }
     }
 
