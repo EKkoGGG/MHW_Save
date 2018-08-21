@@ -88,10 +88,8 @@ namespace WHW_Save
                     MakeSmtpConnection();
                     string eMail = textEdit2.Text;
                     string adress = textEdit1.Text;
-                    SendMails(eMail, adress);
-                    MessageBox.Show("上传存档成功！");
-                    smt.Dispose();
-                    Thread.Sleep(1000);
+                    SendMails(eMail, adress);                    
+                    smt.Dispose();                    
                     this.Close();
                 }
                 else
@@ -171,8 +169,25 @@ namespace WHW_Save
         {
             Process.Start(textEdit3.Text);
             WindowState = FormWindowState.Minimized;
-            timer1.Enabled = true;
-            timer1.Start();
+            Thread.Sleep(10000);
+            while (true)
+            {
+                MyProcesses = Process.GetProcesses();
+                List<string> processName = new List<string>();
+                foreach (var item in MyProcesses)
+                {
+                    processName.Add(item.ProcessName);
+                }
+                bool mhw = processName.Contains("MonsterHunterWorld");
+                if (mhw)
+                {
+                    //MessageBox.Show("找到");
+                    timer1.Enabled = true;                    
+                    break;
+                }
+            }
+            
+          
         }
 
         private void 显示ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -193,10 +208,11 @@ namespace WHW_Save
             {
                 processName.Add(item.ProcessName);
             }
-            bool mhw = processName.Contains("");
+            bool mhw = processName.Contains("MonsterHunterWorld");
             if (!mhw)
             {
-                timer1.Enabled = false;                
+                timer1.Enabled = false;
+                //MessageBox.Show("上传");
                 SaveMhw();
                 this.Close();
 
