@@ -28,16 +28,16 @@ namespace WHW_Save
         static void MakeSmtpConnection()
         {
             smt = new SmtpClient();
-            smt.Host = "smtp.qq.com";
+            smt.Host = "smtp.126.com";
             smt.EnableSsl = true;
-            smt.Credentials = new NetworkCredential("330564052@qq.com", "ovysprmezglkbifi");
+            smt.Credentials = new NetworkCredential("baibai3335@126.com", "zeng2656891");
         }
 
        
         static void SendMails(string Address, string FilePath)
         {
             var mm = new MailMessage();
-            mm.From = new MailAddress("330564052@qq.com", "MHW_Save", Encoding.UTF8);
+            mm.From = new MailAddress("baibai3335@126.com", "MHW_Save", Encoding.UTF8);
             mm.To.Add(new MailAddress(Address));
             mm.BodyEncoding = Encoding.UTF8;
             mm.Subject = "Monster Hunter: World_Save";

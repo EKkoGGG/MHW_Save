@@ -195,7 +195,6 @@
             // 
             // openFileDialog1
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.Filter = "存档文件|*.*";
             // 
             // openFileDialog2
