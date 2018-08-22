@@ -33,11 +33,12 @@ namespace WHW_Save
             smt.Credentials = new NetworkCredential("330564052@qq.com", "ovysprmezglkbifi");
         }
 
+       
         static void SendMails(string Address, string FilePath)
         {
             var mm = new MailMessage();
             mm.From = new MailAddress("330564052@qq.com", "MHW_Save", Encoding.UTF8);
-            mm.To.Add(new MailAddress("330564052@qq.com"));
+            mm.To.Add(new MailAddress(Address));
             mm.BodyEncoding = Encoding.UTF8;
             mm.Subject = "Monster Hunter: World_Save";
             mm.Attachments.Add(new Attachment(FilePath));
@@ -77,6 +78,7 @@ namespace WHW_Save
         {
             MessageBox.Show("点击确定开始上传，上传成功后，本程序自动关闭");
             SaveMhw();
+            
 
         }
 
@@ -87,7 +89,7 @@ namespace WHW_Save
                 if (SavePath.Text != "" && RecviceMail.Text != "")
                 {
                     MakeSmtpConnection();
-                    string eMail = RecviceMail.Text;
+                    string eMail = RecviceMail.Text;                    
                     string adress = SavePath.Text;
                     SendMails(eMail, adress);
                     smt.Dispose();
@@ -148,7 +150,7 @@ namespace WHW_Save
             if (DialogResult.OK == openFileDialog2.ShowDialog())
             {
                 GamePath.Text = openFileDialog2.FileName;
-
+                
             }
         }
 
