@@ -53,7 +53,7 @@ namespace WHW_Save
         {
             if (DialogResult.OK == openFileDialog1.ShowDialog())
             {
-                textEdit1.Text = openFileDialog1.FileName;
+                SavePath.Text = openFileDialog1.FileName;
 
             }
         }
@@ -62,19 +62,20 @@ namespace WHW_Save
         {
             if (flag)
             {
-                textEdit2.Enabled = false;
+                RecviceMail.Enabled = false;
                 flag = false;
             }
             else
             {
-                textEdit2.Enabled = true;
+                RecviceMail.Enabled = true;
                 flag = true;
             }
 
         }
 
-        private void simpleButton3_Click(object sender, EventArgs e)
+        private void simpleButton3_Click(object sender, EventArgs e) //UploadButton，上传存档
         {
+            MessageBox.Show("点击确定开始上传，上传成功后，本程序自动关闭");
             SaveMhw();
 
         }
@@ -83,13 +84,13 @@ namespace WHW_Save
         {
             try
             {
-                if (textEdit1.Text != "" && textEdit2.Text != "")
+                if (SavePath.Text != "" && RecviceMail.Text != "")
                 {
                     MakeSmtpConnection();
-                    string eMail = textEdit2.Text;
-                    string adress = textEdit1.Text;
-                    SendMails(eMail, adress);                    
-                    smt.Dispose();                    
+                    string eMail = RecviceMail.Text;
+                    string adress = SavePath.Text;
+                    SendMails(eMail, adress);
+                    smt.Dispose();
                     this.Close();
                 }
                 else
@@ -103,15 +104,15 @@ namespace WHW_Save
             }
         }
 
-        private void simpleButton4_Click(object sender, EventArgs e)
+        private void simpleButton4_Click(object sender, EventArgs e) //SaveButton，保存配置
         {
-            
+
             IniFile ini = new IniFile(path);
-            if (textEdit1.Text != "" && textEdit2.Text != "" && textEdit3.Text != "")
+            if (SavePath.Text != "" && RecviceMail.Text != "" && GamePath.Text != "")
             {
-                ini.IniWriteValue("ini", "path", textEdit1.Text);
-                ini.IniWriteValue("ini", "eMail", textEdit2.Text);
-                ini.IniWriteValue("ini", "gamePath", textEdit3.Text);
+                ini.IniWriteValue("ini", "path", SavePath.Text);
+                ini.IniWriteValue("ini", "eMail", RecviceMail.Text);
+                ini.IniWriteValue("ini", "gamePath", GamePath.Text);
                 MessageBox.Show("保存配置成功");
                 FileInfo info = new FileInfo(path);
                 if (info.Exists)
@@ -131,22 +132,22 @@ namespace WHW_Save
             IniFile ini = new IniFile(path);
             if (ini.ExistINIFile(path))
             {
-                textEdit1.Text = ini.IniReadValue("ini", "path");
-                textEdit2.Text = ini.IniReadValue("ini", "eMail");
-                textEdit3.Text = ini.IniReadValue("ini", "gamePath");
+                SavePath.Text = ini.IniReadValue("ini", "path");
+                RecviceMail.Text = ini.IniReadValue("ini", "eMail");
+                GamePath.Text = ini.IniReadValue("ini", "gamePath");
             }
             else
             {
                 MessageBox.Show("未找到配置文件，请开始配置");
             }
-           
+
         }
 
         private void simpleButton5_Click(object sender, EventArgs e)
         {
             if (DialogResult.OK == openFileDialog2.ShowDialog())
             {
-                textEdit3.Text = openFileDialog2.FileName;
+                GamePath.Text = openFileDialog2.FileName;
 
             }
         }
@@ -165,9 +166,9 @@ namespace WHW_Save
             this.ShowInTaskbar = false;
         }
 
-        private void simpleButton6_Click(object sender, EventArgs e)
+        private void simpleButton6_Click(object sender, EventArgs e) //GameStartButton，启动游戏
         {
-            Process.Start(textEdit3.Text);
+            Process.Start(GamePath.Text);
             WindowState = FormWindowState.Minimized;
             Thread.Sleep(10000);
             while (true)
@@ -182,12 +183,12 @@ namespace WHW_Save
                 if (mhw)
                 {
                     //MessageBox.Show("找到");
-                    timer1.Enabled = true;                    
+                    timer1.Enabled = true;
                     break;
                 }
             }
-            
-          
+
+
         }
 
         private void 显示ToolStripMenuItem_Click(object sender, EventArgs e)

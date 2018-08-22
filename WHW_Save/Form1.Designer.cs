@@ -31,18 +31,18 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
-            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.GameStartButton = new DevExpress.XtraEditors.SimpleButton();
+            this.GamePathButton = new DevExpress.XtraEditors.SimpleButton();
+            this.GamePath = new DevExpress.XtraEditors.TextEdit();
+            this.GameLabel = new DevExpress.XtraEditors.LabelControl();
+            this.SaveButton = new DevExpress.XtraEditors.SimpleButton();
+            this.UploadButton = new DevExpress.XtraEditors.SimpleButton();
+            this.ReviceButton = new DevExpress.XtraEditors.SimpleButton();
+            this.SavePathButton = new DevExpress.XtraEditors.SimpleButton();
+            this.RecviceMail = new DevExpress.XtraEditors.TextEdit();
+            this.EmailLabel = new DevExpress.XtraEditors.LabelControl();
+            this.SavePath = new DevExpress.XtraEditors.TextEdit();
+            this.SaveLabel = new DevExpress.XtraEditors.LabelControl();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
@@ -52,9 +52,9 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GamePath.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RecviceMail.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SavePath.Properties)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,149 +62,136 @@
             // 
             this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.panelControl1.ContentImage = ((System.Drawing.Image)(resources.GetObject("panelControl1.ContentImage")));
-            this.panelControl1.Controls.Add(this.simpleButton6);
-            this.panelControl1.Controls.Add(this.simpleButton5);
-            this.panelControl1.Controls.Add(this.textEdit3);
-            this.panelControl1.Controls.Add(this.labelControl3);
-            this.panelControl1.Controls.Add(this.simpleButton4);
-            this.panelControl1.Controls.Add(this.simpleButton3);
-            this.panelControl1.Controls.Add(this.simpleButton2);
-            this.panelControl1.Controls.Add(this.simpleButton1);
-            this.panelControl1.Controls.Add(this.textEdit2);
-            this.panelControl1.Controls.Add(this.labelControl2);
-            this.panelControl1.Controls.Add(this.textEdit1);
-            this.panelControl1.Controls.Add(this.labelControl1);
-            this.panelControl1.Location = new System.Drawing.Point(14, 15);
-            this.panelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panelControl1.Controls.Add(this.GameStartButton);
+            this.panelControl1.Controls.Add(this.GamePathButton);
+            this.panelControl1.Controls.Add(this.GamePath);
+            this.panelControl1.Controls.Add(this.GameLabel);
+            this.panelControl1.Controls.Add(this.SaveButton);
+            this.panelControl1.Controls.Add(this.UploadButton);
+            this.panelControl1.Controls.Add(this.ReviceButton);
+            this.panelControl1.Controls.Add(this.SavePathButton);
+            this.panelControl1.Controls.Add(this.RecviceMail);
+            this.panelControl1.Controls.Add(this.EmailLabel);
+            this.panelControl1.Controls.Add(this.SavePath);
+            this.panelControl1.Controls.Add(this.SaveLabel);
+            this.panelControl1.Location = new System.Drawing.Point(12, 12);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(413, 357);
+            this.panelControl1.Size = new System.Drawing.Size(361, 278);
             this.panelControl1.TabIndex = 0;
             // 
-            // simpleButton6
+            // GameStartButton
             // 
-            this.simpleButton6.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Bold);
-            this.simpleButton6.Appearance.Options.UseFont = true;
-            this.simpleButton6.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton6.Image")));
-            this.simpleButton6.Location = new System.Drawing.Point(219, 283);
-            this.simpleButton6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.simpleButton6.Name = "simpleButton6";
-            this.simpleButton6.Size = new System.Drawing.Size(183, 57);
-            this.simpleButton6.TabIndex = 8;
-            this.simpleButton6.Text = "启动游戏";
-            this.simpleButton6.Click += new System.EventHandler(this.simpleButton6_Click);
+            this.GameStartButton.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Bold);
+            this.GameStartButton.Appearance.Options.UseFont = true;
+            this.GameStartButton.Image = ((System.Drawing.Image)(resources.GetObject("GameStartButton.Image")));
+            this.GameStartButton.Location = new System.Drawing.Point(192, 220);
+            this.GameStartButton.Name = "GameStartButton";
+            this.GameStartButton.Size = new System.Drawing.Size(160, 44);
+            this.GameStartButton.TabIndex = 8;
+            this.GameStartButton.Text = "启动游戏";
+            this.GameStartButton.Click += new System.EventHandler(this.simpleButton6_Click);
             // 
-            // simpleButton5
+            // GamePathButton
             // 
-            this.simpleButton5.Location = new System.Drawing.Point(317, 140);
-            this.simpleButton5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.simpleButton5.Name = "simpleButton5";
-            this.simpleButton5.Size = new System.Drawing.Size(86, 30);
-            this.simpleButton5.TabIndex = 7;
-            this.simpleButton5.Text = "选择";
-            this.simpleButton5.Click += new System.EventHandler(this.simpleButton5_Click);
+            this.GamePathButton.Location = new System.Drawing.Point(277, 109);
+            this.GamePathButton.Name = "GamePathButton";
+            this.GamePathButton.Size = new System.Drawing.Size(75, 23);
+            this.GamePathButton.TabIndex = 7;
+            this.GamePathButton.Text = "选择";
+            this.GamePathButton.Click += new System.EventHandler(this.simpleButton5_Click);
             // 
-            // textEdit3
+            // GamePath
             // 
-            this.textEdit3.Location = new System.Drawing.Point(111, 140);
-            this.textEdit3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Size = new System.Drawing.Size(199, 24);
-            this.textEdit3.TabIndex = 6;
+            this.GamePath.Location = new System.Drawing.Point(97, 109);
+            this.GamePath.Name = "GamePath";
+            this.GamePath.Size = new System.Drawing.Size(174, 20);
+            this.GamePath.TabIndex = 6;
             // 
-            // labelControl3
+            // GameLabel
             // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(8, 140);
-            this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(102, 23);
-            this.labelControl3.TabIndex = 5;
-            this.labelControl3.Text = "选择游戏路径";
+            this.GameLabel.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.GameLabel.Appearance.Options.UseFont = true;
+            this.GameLabel.Location = new System.Drawing.Point(7, 109);
+            this.GameLabel.Name = "GameLabel";
+            this.GameLabel.Size = new System.Drawing.Size(84, 20);
+            this.GameLabel.TabIndex = 5;
+            this.GameLabel.Text = "选择游戏路径";
             // 
-            // simpleButton4
+            // SaveButton
             // 
-            this.simpleButton4.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Bold);
-            this.simpleButton4.Appearance.Options.UseFont = true;
-            this.simpleButton4.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.Image")));
-            this.simpleButton4.Location = new System.Drawing.Point(8, 201);
-            this.simpleButton4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(183, 57);
-            this.simpleButton4.TabIndex = 4;
-            this.simpleButton4.Text = "保存配置";
-            this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
+            this.SaveButton.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Bold);
+            this.SaveButton.Appearance.Options.UseFont = true;
+            this.SaveButton.Image = ((System.Drawing.Image)(resources.GetObject("SaveButton.Image")));
+            this.SaveButton.Location = new System.Drawing.Point(7, 156);
+            this.SaveButton.Name = "SaveButton";
+            this.SaveButton.Size = new System.Drawing.Size(160, 44);
+            this.SaveButton.TabIndex = 4;
+            this.SaveButton.Text = "保存配置";
+            this.SaveButton.Click += new System.EventHandler(this.simpleButton4_Click);
             // 
-            // simpleButton3
+            // UploadButton
             // 
-            this.simpleButton3.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Bold);
-            this.simpleButton3.Appearance.Options.UseFont = true;
-            this.simpleButton3.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.Image")));
-            this.simpleButton3.Location = new System.Drawing.Point(6, 283);
-            this.simpleButton3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(183, 57);
-            this.simpleButton3.TabIndex = 3;
-            this.simpleButton3.Text = "上传存档";
-            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
+            this.UploadButton.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Bold);
+            this.UploadButton.Appearance.Options.UseFont = true;
+            this.UploadButton.Image = ((System.Drawing.Image)(resources.GetObject("UploadButton.Image")));
+            this.UploadButton.Location = new System.Drawing.Point(5, 220);
+            this.UploadButton.Name = "UploadButton";
+            this.UploadButton.Size = new System.Drawing.Size(160, 44);
+            this.UploadButton.TabIndex = 3;
+            this.UploadButton.Text = "上传存档";
+            this.UploadButton.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
-            // simpleButton2
+            // ReviceButton
             // 
-            this.simpleButton2.Location = new System.Drawing.Point(317, 82);
-            this.simpleButton2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(86, 30);
-            this.simpleButton2.TabIndex = 2;
-            this.simpleButton2.Text = "确定";
-            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
+            this.ReviceButton.Location = new System.Drawing.Point(277, 64);
+            this.ReviceButton.Name = "ReviceButton";
+            this.ReviceButton.Size = new System.Drawing.Size(75, 23);
+            this.ReviceButton.TabIndex = 2;
+            this.ReviceButton.Text = "确定";
+            this.ReviceButton.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
-            // simpleButton1
+            // SavePathButton
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(317, 24);
-            this.simpleButton1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(86, 30);
-            this.simpleButton1.TabIndex = 2;
-            this.simpleButton1.Text = "选择";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            this.SavePathButton.Location = new System.Drawing.Point(277, 19);
+            this.SavePathButton.Name = "SavePathButton";
+            this.SavePathButton.Size = new System.Drawing.Size(75, 23);
+            this.SavePathButton.TabIndex = 2;
+            this.SavePathButton.Text = "选择";
+            this.SavePathButton.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
-            // textEdit2
+            // RecviceMail
             // 
-            this.textEdit2.Location = new System.Drawing.Point(111, 84);
-            this.textEdit2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(199, 24);
-            this.textEdit2.TabIndex = 1;
+            this.RecviceMail.Location = new System.Drawing.Point(97, 65);
+            this.RecviceMail.Name = "RecviceMail";
+            this.RecviceMail.Size = new System.Drawing.Size(174, 20);
+            this.RecviceMail.TabIndex = 1;
             // 
-            // labelControl2
+            // EmailLabel
             // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(8, 82);
-            this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(102, 23);
-            this.labelControl2.TabIndex = 0;
-            this.labelControl2.Text = "存档接收邮箱";
+            this.EmailLabel.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.EmailLabel.Appearance.Options.UseFont = true;
+            this.EmailLabel.Location = new System.Drawing.Point(7, 64);
+            this.EmailLabel.Name = "EmailLabel";
+            this.EmailLabel.Size = new System.Drawing.Size(84, 20);
+            this.EmailLabel.TabIndex = 0;
+            this.EmailLabel.Text = "存档接收邮箱";
             // 
-            // textEdit1
+            // SavePath
             // 
-            this.textEdit1.Location = new System.Drawing.Point(111, 26);
-            this.textEdit1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(199, 24);
-            this.textEdit1.TabIndex = 1;
+            this.SavePath.Location = new System.Drawing.Point(97, 20);
+            this.SavePath.Name = "SavePath";
+            this.SavePath.Size = new System.Drawing.Size(174, 20);
+            this.SavePath.TabIndex = 1;
             // 
-            // labelControl1
+            // SaveLabel
             // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(8, 24);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(102, 23);
-            this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "选择存档路径";
+            this.SaveLabel.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.SaveLabel.Appearance.Options.UseFont = true;
+            this.SaveLabel.Location = new System.Drawing.Point(7, 19);
+            this.SaveLabel.Name = "SaveLabel";
+            this.SaveLabel.Size = new System.Drawing.Size(84, 20);
+            this.SaveLabel.TabIndex = 0;
+            this.SaveLabel.Text = "选择存档路径";
             // 
             // openFileDialog1
             // 
@@ -230,19 +217,19 @@
             this.显示ToolStripMenuItem,
             this.退出ToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(109, 52);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(101, 48);
             // 
             // 显示ToolStripMenuItem
             // 
             this.显示ToolStripMenuItem.Name = "显示ToolStripMenuItem";
-            this.显示ToolStripMenuItem.Size = new System.Drawing.Size(108, 24);
+            this.显示ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.显示ToolStripMenuItem.Text = "显示";
             this.显示ToolStripMenuItem.Click += new System.EventHandler(this.显示ToolStripMenuItem_Click);
             // 
             // 退出ToolStripMenuItem
             // 
             this.退出ToolStripMenuItem.Name = "退出ToolStripMenuItem";
-            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(108, 24);
+            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.退出ToolStripMenuItem.Text = "退出";
             this.退出ToolStripMenuItem.Click += new System.EventHandler(this.退出ToolStripMenuItem_Click);
             // 
@@ -253,13 +240,12 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(440, 387);
+            this.ClientSize = new System.Drawing.Size(385, 301);
             this.Controls.Add(this.panelControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "MHW_Save";
@@ -268,9 +254,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GamePath.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RecviceMail.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SavePath.Properties)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -279,20 +265,20 @@
         #endregion
 
         private DevExpress.XtraEditors.PanelControl panelControl1;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.LabelControl SaveLabel;
+        private DevExpress.XtraEditors.TextEdit SavePath;
+        private DevExpress.XtraEditors.SimpleButton SavePathButton;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
-        private DevExpress.XtraEditors.SimpleButton simpleButton4;
-        private DevExpress.XtraEditors.SimpleButton simpleButton5;
-        private DevExpress.XtraEditors.TextEdit textEdit3;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.TextEdit RecviceMail;
+        private DevExpress.XtraEditors.LabelControl EmailLabel;
+        private DevExpress.XtraEditors.SimpleButton ReviceButton;
+        private DevExpress.XtraEditors.SimpleButton UploadButton;
+        private DevExpress.XtraEditors.SimpleButton SaveButton;
+        private DevExpress.XtraEditors.SimpleButton GamePathButton;
+        private DevExpress.XtraEditors.TextEdit GamePath;
+        private DevExpress.XtraEditors.LabelControl GameLabel;
         private System.Windows.Forms.OpenFileDialog openFileDialog2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton6;
+        private DevExpress.XtraEditors.SimpleButton GameStartButton;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 显示ToolStripMenuItem;
