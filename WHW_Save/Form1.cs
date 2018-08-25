@@ -221,6 +221,15 @@ namespace WHW_Save
 
             }
         }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (DialogResult.No == MessageBox.Show("您确定要退出吗?", "MHW_Save", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+            {
+                e.Cancel = true;
+                WindowState = FormWindowState.Minimized;
+            }
+        }
     }
 
     public class IniFile
